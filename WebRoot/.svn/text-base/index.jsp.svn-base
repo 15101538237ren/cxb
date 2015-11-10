@@ -1,0 +1,109 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<jsp:include page="/cxb/_message.jsp"></jsp:include>
+		<title>创新杯</title>
+		<style type="text/css" media="screen">
+
+			body{
+				background:#fff;
+				margin:0;
+				overflow:hidden;
+				padding:0;
+			}
+			li{
+				color:#000;
+				font:bold 13px Arial,sans-serif;
+				list-style: none;
+			}
+			a{
+				color:#00f;
+				text-decoration:none;
+			}
+		
+		</style>
+		
+	</head>
+	<body>
+		<h1 align="center"><a href='<s:url action="login" namespace="/login" />'>点击登录软件学院“创新杯”网站 </a></h1>
+		<p align="center">(下面的动态文字可以点击)</p>
+		<ul>
+	        <li><a href="http://cmusphinx.sourceforge.net/">Speech Recognition</a></li>
+			<li><a href="http://cmusphinx.sourceforge.net/">CMU Sphinx</a></li>
+			<li><a href="http://msdn.microsoft.com/zh-cn/gg134569.aspx">Windows Phone</a></li>
+			<li><a href="http://jwgl.buaa.edu.cn">jwgl.buaa.edu.cn</a></li>
+			<li><a href="http://www.csdn.net/">CSDN</a></li>
+			<li><a href="http://www.ted.com/">TED</a></li>
+			<li><a href="http://www.web3d.com.cn/new/news/dissertation/2007/7/12/031282.html">Web3D</a></li>
+	        <li><a href="http://www.opencv.org.cn/index.php/%E9%A6%96%E9%A1%B5">OpenCV</a></li>
+			<li><a href="http://www.flab3d.com/">Flash3D</a></li>
+			<li><a href="http://www.cvchina.info/tag/%E5%A2%9E%E5%BC%BA%E7%8E%B0%E5%AE%9E/">增强现实</a></li>
+	        <li><a href="http://www.eguidedog.net/index_cn.php">语音导盲犬</a></li>
+	        
+		</ul>
+		<p align="center">©2011 北京航空航天大学软件学院</p>
+	</body>
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+	
+	//Setup Arrays that will hold the x,y,z of each element.
+	var x = new Array();
+	var y = new Array();
+	var z = new Array();
+	
+	//Get the list of items.
+	var items = $('li');
+	
+	//Animate the items.
+	function animate()
+	{
+		
+		//Step through each item.
+		for(i = items.length - 1; i >= 0; i--){
+			
+			
+			//variables for movement.			
+			var xVar = 50 + x[i] 			// x value
+			var yVar = 50 + y[i] * z[i]++;	// y value, move towards bottom of screen
+			var zVar = 10 * z[i]++;			// z value, text get larger.
+			
+			
+			//Check to see if text position is still on the screen.
+			// the #'s are %.   100 is far right or bottom, 0 is top or left.
+			// for z value it's the font size in %.
+			if (!xVar | xVar < 0 | xVar > 90| 
+				yVar < 0 | yVar > 90 | 
+				zVar < 0 | zVar > 2000)
+			{
+				//if it's off the screen randomly pick a starting place.
+				x[i]= Math.random() * 2 - 1;
+				y[i] = Math.random() * 2 - 1;
+				z[i] = 2; 
+				
+			}
+			else
+			{
+				//if it's still on the screen apply the appropiate styles.
+				
+				$(items[i]).css("position", "absolute"); // make sure we can move the text around.
+				$(items[i]).css("top", xVar+"%");  // y value
+				$(items[i]).css("left", yVar+"%"); // x value
+				
+				$(items[i]).css("fontSize", (zVar)/4+"%"); // font size (illusion of perspective.)
+				$(items[i]).css("opacity",(zVar)/3000); // fade in from the distance.
+			}
+		}
+	
+		setTimeout(animate, 5);
+	}
+
+animate();
+</script>
+
+
+</html>

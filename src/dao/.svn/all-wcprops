@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 31
+/svn/cxb/!svn/ver/2/cxb/src/dao
+END
+ActionDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/cxb/!svn/ver/2/cxb/src/dao/ActionDAO.java
+END
+AdministratorDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/cxb/!svn/ver/2/cxb/src/dao/AdministratorDAO.java
+END
+RoleDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/cxb/!svn/ver/2/cxb/src/dao/RoleDAO.java
+END
+TakeinprojectDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/cxb/!svn/ver/2/cxb/src/dao/TakeinprojectDAO.java
+END
+ProjectDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/cxb/!svn/ver/2/cxb/src/dao/ProjectDAO.java
+END
+StudentDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/cxb/!svn/ver/2/cxb/src/dao/StudentDAO.java
+END
+AllDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/cxb/!svn/ver/2/cxb/src/dao/AllDAO.java
+END

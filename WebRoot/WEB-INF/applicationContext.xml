@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName"
+			value="com.mysql.jdbc.Driver">
+		</property>
+		<property name="url" value="jdbc:mysql://renhongleiz.mysql.rds.aliyuncs.com:3306/cxb"></property>
+		<property name="username" value="cxb"></property>
+		<property name="password" value="harry123"></property>
+	</bean>
+	
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQLDialect
+				</prop>
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>hbm/Project.hbm.xml</value>
+				<value>hbm/Student.hbm.xml</value>
+				<value>hbm/Takeinproject.hbm.xml</value>
+				<value>hbm/Administrator.hbm.xml</value>
+				<value>hbm/Role.hbm.xml</value>
+				<value>hbm/Action.hbm.xml</value></list>
+		</property>
+	</bean>	
+	
+	<!--将事务管理交给spring，注册一个bean--> 
+	<bean id="transactionManager"  
+	    class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+        <property name="sessionFactory">
+            <ref bean="sessionFactory" />
+        </property>
+    </bean>
+    
+	<bean id="StudentDAO" class="dao.StudentDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="ProjectDAO" class="dao.ProjectDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="TakeinprojectDAO" class="dao.TakeinprojectDAO">
+    	<property name="sessionFactory">
+    		<ref bean="sessionFactory" />
+    	</property>
+    </bean>
+			
+	<bean id="AdministratorDAO" class="dao.AdministratorDAO">
+    	<property name="sessionFactory">
+    		<ref bean="sessionFactory" />
+    	</property>
+    </bean><bean id="RoleDAO" class="dao.RoleDAO">
+    	<property name="sessionFactory">
+    		<ref bean="sessionFactory" />
+    	</property>
+    </bean><bean id="ActionDAO" class="dao.ActionDAO">
+    	<property name="sessionFactory">
+    		<ref bean="sessionFactory" />
+    	</property>
+    </bean>
+    
+    <bean id="QueryUtil" class="util.QueryUtil">
+		<property name="sessionFactory">
+    		<ref bean="sessionFactory" />
+    	</property>
+    </bean>
+    
+	<!-- AllDAO.java注入 -->
+	<bean id="allDAO" class="dao.AllDAO">
+		<property name="studentDAO">
+			<ref bean="StudentDAO"/>
+		</property>
+		<property name="projectDAO">
+			<ref bean="ProjectDAO"/>
+		</property>
+		<property name="takeinprojectDAO">
+			<ref bean="TakeinprojectDAO"/>
+		</property>
+		<property name="queryBean">
+			<ref bean="QueryUtil"/>
+		</property>
+	</bean>
+
+    
+	<!-- LoginService.java注入 -->
+    <bean id="loginService" class="service.LoginService">
+    	<property name="allDAO">
+    		<ref bean="allDAO" />
+    	</property>
+    </bean>
+    
+    <!-- SignUpService.java注入 -->
+    <bean id="signUpService" class="service.SignUpService">
+    	<property name="allDAO">
+    		<ref bean="allDAO" />
+    	</property>
+    </bean>
+    
+    <!-- StudentService.java注入 -->
+    <bean id="studentService" class="service.StudentService">
+    	<property name="allDAO">
+    		<ref bean="allDAO" />
+    	</property>
+    </bean>
+    
+    <!-- ProjectService.java注入 -->
+    <bean id="projectService" class="service.ProjectService">
+    	<property name="allDAO">
+    		<ref bean="allDAO" />
+    	</property>
+    </bean>
+    
+     <!-- TakeinprojectService.java注入 -->
+    <bean id="takeinprojectService" class="service.TakeinprojectService">
+    	<property name="allDAO">
+    		<ref bean="allDAO" />
+    	</property>
+    </bean>
+    
+    <!-- AdministrationService.java注入 -->
+    <bean id="adminService" class="service.AdministrationService">
+    	<property name="allDAO">
+    		<ref bean="allDAO" />
+    	</property>
+    </bean>
+    
+    <!-- MeService.java注入 -->
+    <bean id="meService" class="service.MeService">
+    	<property name="allDAO">
+    		<ref bean="allDAO" />
+    	</property>
+    </bean>
+    
+	<!-- AllService.java注入 -->
+	<bean id="allService" class="service.AllService">
+		<property name="loginService">
+			<ref bean="loginService" ></ref>
+		</property>
+		<property name="signUpService">
+			<ref bean="signUpService" ></ref>
+		</property>
+		<property name="studentService">
+			<ref bean="studentService" ></ref>
+		</property>
+		<property name="projectService">
+			<ref bean="projectService"></ref>
+		</property>
+		<property name="takeinprojectService">
+			<ref bean="takeinprojectService"></ref>
+		</property>
+		<property name="adminService">
+			<ref bean="adminService"></ref>
+		</property>
+		<property name="meService">
+			<ref bean="meService"></ref>
+		</property>
+	</bean>
+	
+	<!-- action的IOC控制 -->
+	<bean id="base" class="controller.BaseAction" scope="prototype">
+		<property name="allService">
+			<ref bean="allService" />
+		</property>
+	</bean>	
+	<bean id="defaultAction" class="controller.DefaultAction" parent="base" scope="prototype" />
+	<bean id="ajaxAction" class="controller.AjaxAction" parent="base" scope="prototype" />
+	<bean id="loginAction" class="controller.LoginAction" parent="base" scope="prototype" />
+	<bean id="signUpAction" class="controller.SignUpAction" parent="base" scope="prototype" />
+    <bean id="homeAction" class="controller.HomeAction" parent="base" scope="prototype" />
+    <bean id="projectAction" class="controller.ProjectAction" parent="base" scope="prototype" />
+    <bean id="adminAction" class="controller.AdminAction" parent="base" scope="prototype" />
+    <bean id="meAction" class="controller.MeAction" parent="base" scope="prototype" />
+    <bean id="indexAction" class="controller.IndexAction" parent="base" scope="prototype" />
+       
+    </beans>

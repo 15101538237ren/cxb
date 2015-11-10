@@ -1,0 +1,19 @@
+package controller;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+import service.AllService;
+
+@SuppressWarnings("serial")
+public class BaseAction extends ActionSupport{
+	//引用所有服务
+	private AllService allService;
+
+	public AllService getAllService() {
+		return allService;
+	}
+
+	public void setAllService(AllService allService) {
+		this.allService = allService;
+	}
+}

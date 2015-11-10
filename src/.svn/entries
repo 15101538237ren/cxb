@@ -1,0 +1,86 @@
+10
+
+dir
+2
+https://bettersoft-pc/svn/cxb/cxb/src
+https://bettersoft-pc/svn/cxb
+
+
+
+2012-03-12T08:26:55.509188Z
+2
+zy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+090f968c-7907-d743-88f6-679cdff361e4
+
+service
+dir
+
+controller
+dir
+
+dao
+dir
+
+struts.xml
+file
+
+
+
+
+2011-11-14T11:43:29.235766Z
+635c9b9955b8de4e3e2a4fbf8074335b
+2012-03-12T08:26:55.509188Z
+2
+zy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6344
+
+filter
+dir
+
+hbm
+dir
+
+entity
+dir
+
+util
+dir
+
+interceptor
+dir
+

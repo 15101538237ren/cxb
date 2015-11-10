@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/cxb/!svn/ver/2/cxb/src/service
+END
+MeService.java
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/cxb/!svn/ver/2/cxb/src/service/MeService.java
+END
+TakeinprojectService.java
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/cxb/!svn/ver/2/cxb/src/service/TakeinprojectService.java
+END
+AdministrationService.java
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/cxb/!svn/ver/2/cxb/src/service/AdministrationService.java
+END
+SignUpService.java
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/cxb/!svn/ver/2/cxb/src/service/SignUpService.java
+END
+ProjectService.java
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/cxb/!svn/ver/2/cxb/src/service/ProjectService.java
+END
+StudentService.java
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/cxb/!svn/ver/2/cxb/src/service/StudentService.java
+END
+AllService.java
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/cxb/!svn/ver/2/cxb/src/service/AllService.java
+END
+LoginService.java
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/cxb/!svn/ver/2/cxb/src/service/LoginService.java
+END

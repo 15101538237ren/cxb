@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 23
+/svn/cxb/!svn/ver/1/cxb
+END
+.myhibernatedata
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/cxb/!svn/ver/2/cxb/.myhibernatedata
+END
+.classpath
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/cxb/!svn/ver/3/cxb/.classpath
+END
+.mystrutsdata
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/cxb/!svn/ver/2/cxb/.mystrutsdata
+END
+.mymetadata
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/cxb/!svn/ver/2/cxb/.mymetadata
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 32
+/svn/cxb/!svn/ver/2/cxb/.project
+END
+hibernate.reveng.xml
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/cxb/!svn/ver/2/cxb/hibernate.reveng.xml
+END
+.springBeans
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/cxb/!svn/ver/2/cxb/.springBeans
+END

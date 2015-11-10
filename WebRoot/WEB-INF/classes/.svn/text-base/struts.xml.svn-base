@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<!-- 处理编码乱码问题 -->
+    <constant name="struts.i18n.encoding" value="UTF-8" />
+    <!-- 将Struts2 交给Spring管理 -->
+	<constant name="struts.objectFactory" value="spring" />
+	<!-- 允许jsp页面调用静态方法-->
+	<constant name="struts.ognl.allowStaticMethodAccess" value="true"></constant>
+	<!-- 设置struts标签主题 -->
+	<constant name="struts.ui.theme" value="simple"></constant>
+	<!-- 设置上传文件大小 -->
+	<constant name= "struts.multipart.maxSize" value="4294967296" />
+	
+	<!-- 导入默认文件 -->
+	<include file="struts-default.xml"></include>
+	
+	<!-- 基本包，配置全局定向与拦截器 -->
+	<package name="Base" extends="struts-default">	
+		<interceptors>		    
+		    <interceptor name="checkLogined" class="interceptor.LoginInterceptor" />		    
+		    
+		    <interceptor-stack name="bckInterceptor">
+	            <interceptor-ref name="checkLogined" />	  
+	            <interceptor-ref name="defaultStack" />         
+			</interceptor-stack>			
+		</interceptors>
+		
+		<default-action-ref name="defaultAction" />
+		
+	   	<!-- 全局定位 -->
+		<global-results>
+            <result name="login">/cxb/userLogin/login.jsp</result>
+            <result name="error">/cxb/error.jsp</result>
+        </global-results>
+	</package>
+	
+	<!-- 前台主页包 -->
+	<package  namespace="/home" name="Home" extends="Base">
+	   <action name="homeIndex" class="homeAction" method="index">            
+            <result name="login" type="redirectAction">
+		        <param name="actionName">login</param>
+                <param name="namespace">/login</param>
+		    </result>
+		    <result name="success">
+		    	/index.jsp
+		    </result>
+        </action>
+	</package>
+	
+	<!-- Ajax -->
+	<package namespace="/ajax" name="Ajax" extends="json-default">
+	   <action name="findStudent" class="ajaxAction" method="findStudent"> 
+            <result name="success" type="json"></result>
+        </action>
+	</package>
+	
+	<!-- 学生登录 -->
+	<package namespace="/login" name="Login" extends="Base">
+		<action name="login" class="loginAction" method="login">
+			<result name="success">/cxb/userLogin/login.jsp</result>
+		</action>
+		<action name="doLogin" class="loginAction" method="doLogin">		 	
+		    <result name="success" type="redirectAction">
+		        <param name="actionName">show</param>
+                <param name="namespace">/project</param>
+		    </result>
+			<result name="input">/cxb/userLogin/login.jsp</result>
+		</action>
+		<action name="logout" class="loginAction" method="logout">	
+			<interceptor-ref name="bckInterceptor" />	 	
+			<result name="success">/cxb/userLogin/login.jsp</result>
+		</action>			
+	</package>
+	
+	<!-- 项目申报 -->
+	<package namespace="/apply" name="Apply" extends="Base">
+		<action name="signUp" class="signUpAction" method="signUp">
+			<interceptor-ref name="bckInterceptor" />
+			<result name="success" type="redirectAction">
+				<param name="actionName">new</param>
+                <param name="namespace">/project</param> 
+            </result>
+			<result name="isApplied" type="redirectAction">
+				<param name="actionName">show</param>
+                <param name="namespace">/project</param>
+                <param name="message">${message}</param>
+			</result>
+		</action>
+	</package>
+	
+	<!-- 项目信息管理 -->
+	<package namespace="/project" name="Project" extends="Base">
+		<action name="new" class="projectAction" method="newProject">
+			<interceptor-ref name="bckInterceptor" />
+			<result name="success">/cxb/apply/signUp.jsp</result>
+		</action>
+		<action name="save" class="projectAction" method="save">
+			<interceptor-ref name="bckInterceptor" />			
+			<result name="success">/cxb/project/info.jsp</result>
+			<result name="none" type="redirectAction">
+				<param name="namespace">/project</param>
+				<param name="actionName">new</param>                
+			</result>
+		</action>
+		<action name="edit" class="projectAction" method="editProject">
+			<interceptor-ref name="bckInterceptor" />
+			<result name="success">/cxb/apply/signUp.jsp</result>
+		</action>
+		<action name="show" class="projectAction" method="show">
+			 <interceptor-ref name="bckInterceptor" />
+			<result name="success">/cxb/me/profile.jsp</result>
+		</action>
+		<action name="list" class="projectAction" method="list">
+			<result name="success">/cxb/manage/projectList.jsp</result>
+		</action>
+		<action name="export" class="projectAction" method="export">
+			<result name="success">/cxb/manage/exportProjects.jsp</result>
+		</action>
+		<action name="search" class="projectAction" method="searchProject">
+			<result name="success">/cxb/manage/projectList.jsp</result>
+		</action>
+	</package>
+	
+	
+	<!-- 导航 -->
+	<package namespace="/index" name="Index" extends="Base">
+	    <action name="index" class="indexAction" method="index">	        
+	        <result name="success">/cxb/index/index.jsp</result>
+	    </action>
+	    <action name="header" class="indexAction" method="header">	        
+	        <result name="success">/cxb/index/header.jsp</result>
+	    </action>
+	    <action name="topMenu" class="indexAction" method="topMenu">	        
+	        <result name="success">/cxb/index/topMenu.jsp</result>
+	    </action>
+	    <action name="leftMenu" class="indexAction" method="leftMenu">	        
+	        <result name="success">/cxb/index/leftMenu.jsp</result>
+	    </action>
+	</package>
+	
+	<!-- 后台管理员，配置对后台管理员的 -->
+	<package namespace="/admin" name="AdminAction" extends="Base">
+		<action name="list" class="adminAction" method="listAllProjects">
+			<result name="success">/cxb/manage/projectList.jsp</result>
+		</action>
+		<action name="search" class="adminAction" method="searchProjects">
+			<result name="success">/cxb/manage/projectList.jsp</result>
+			<result name="error">/cxb/manage/projectList.jsp</result>
+		</action>
+		<action name="singleShow" class="adminiAction" method="singleShow">
+			<result name="success">/cxb/project/singleShow.jsp</result>
+		</action>
+		<action name="publishNotice" class="adminAction" method="publishNotice">
+			<result name="success">/cxb/manage/notice.jsp</result>
+		</action>
+	</package>
+</struts>    

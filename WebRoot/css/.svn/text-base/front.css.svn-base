@@ -1,0 +1,37 @@
+body {
+	line-height:1.5em;
+	margin:0;
+	padding:0;
+	color:#000;
+	font-size:medium;
+	}
+	
+form,p,input{margin:0;padding:0}
+img{border:none}
+a{text-decoration:none;color:#123db4}
+.kw{width:100%}
+.seaipt{border:1px solid #87b9de; height:25px; padding:1px 0}
+.seabtn{background-color:#B0E0E6;border:1px solid #87b9de; height:25px; padding:1px 3px;color:#123db4;cursor:pointer;}
+.c000{color:#000}
+.chui{color:#a0a0a0}
+.cbl{color:#123db4}
+.cb2{color:#36f}
+.mt4{margin-top:4px}
+.cgr{color:#249103}
+.cblue{color:#00E}
+.chot{color:#ff3200}
+.bl{background-color:#eff4f7}
+.bgy{background-color:#FBFBE4}
+.pd5{padding:0 5px;word-wrap:break-word}
+.fb{font-weight:bold}
+.ptb8{padding:8px 0}
+.tout{border-top:1px solid #9bcbed}
+.tin{border-bottom:1px solid #9bcbed;border-top:1px solid #fff;background-color:#e4f2fb;padding:1px 5px}
+.fout{border-top:1px solid #c5dff1;margin-bottom:4px}
+.fin{border-bottom:1px solid #c5dff1;border-top:1px solid #fff;background-color:#e4f2fb;padding:4px 5px}
+.uli a{text-decoration:underline}
+.ptb45{padding:4px 5px}
+.mt2{margin-top:2px}
+.pt6{padding-top:6px}
+.bdd{border-bottom:1px dotted #cdcdcd;padding-bottom:5px;margin-bottom:5px}
+		

@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 31
+/svn/cxb/!svn/ver/2/cxb/src/hbm
+END
+Action.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/cxb/!svn/ver/2/cxb/src/hbm/Action.hbm.xml
+END
+Administrator.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/cxb/!svn/ver/2/cxb/src/hbm/Administrator.hbm.xml
+END
+Role.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/cxb/!svn/ver/2/cxb/src/hbm/Role.hbm.xml
+END
+Takeinproject.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/cxb/!svn/ver/2/cxb/src/hbm/Takeinproject.hbm.xml
+END
+Project.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/cxb/!svn/ver/2/cxb/src/hbm/Project.hbm.xml
+END
+Student.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/cxb/!svn/ver/2/cxb/src/hbm/Student.hbm.xml
+END

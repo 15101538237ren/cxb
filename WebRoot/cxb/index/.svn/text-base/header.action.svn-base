@@ -1,0 +1,28 @@
+﻿
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="global.css">
+    <script type="text/javascript" src="../js/common.js"></script>
+    <script type="text/javascript">
+       function logout(){
+		  if(confirm("您确定要退出系统吗？"))
+		      top.location.href = '/MoveRead/managerLogin/logout.action';    
+	   }
+    </script>
+  </head>
+  <body>
+	  <div>
+	    <div>&nbsp;</div>
+	    <div>
+			<div style="float:left;padding-top:10px"></div>
+			<div class="rheader">
+				<span>当前登录用户:&#36229;&#32423;&#31649;&#29702;&#21592;</span>
+				<span>&nbsp;</span>
+				<span><a href="javascript:void(0)" onclick="logout()">退出系统</a></span>
+			</div>
+		</div>
+	  </div>
+  </body>
+</html>

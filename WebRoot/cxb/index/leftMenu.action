@@ -1,0 +1,98 @@
+﻿
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="global.css">
+    <script type="text/javascript" src="../js/jquery-1.4.2.js"></script>
+    <script type="text/javascript">
+       $(document).ready(function(){
+		  $(".singleMenu a").click(function(){
+			 $(".singleMenu a").removeClass("selected");
+			 $(this).addClass("selected");
+		  });
+	   });
+       function openJsp(url){
+		  if(url && url != "")	parent.executeCmd("showPage", url);
+	   };
+    </script>
+  </head>
+  
+  <body>
+    <div>
+		<div id="topMenu_1" class="module">
+			<h4>我的工作区</h4>
+			<div class="singleMenu">
+				<h5>我的工作</h5>
+				<a href="#" onclick="openJsp('/MoveRead/my/pending.action')">待办</a>
+				<a href="#" onclick="openJsp('/MoveRead/my/done.action')">已办</a>
+				<a href="#" onclick="openJsp('/MoveRead/my/flow.action')">我发起的流程</a>
+				<h5>个人设置</h5>
+				<a href="#" onclick="openJsp('/MoveRead/my/managerInfo.action')">个人信息</a>
+			</div>
+	        <br/>
+		</div>
+		
+		<div id="topMenu_2" class="module hide">
+			<h4>书籍管理</h4>
+			<div class="singleMenu">
+			    <a href="#" onclick="openJsp('/MoveRead/book/listMyBook.action')">我的书籍</a>
+				<a href="#" onclick="openJsp('/MoveRead/book/listToAudit.action')">待审书籍</a>
+				<a href="#" onclick="openJsp('/MoveRead/book/listAuditing.action')">在审书籍</a>
+				<a href="#" onclick="openJsp('/MoveRead/book/listAudited.action')">已审书籍</a>
+				<a href="#" onclick="openJsp('/MoveRead/book/listAuditedNoSection.action')">已审核未分区书籍</a>
+				<a href="#" onclick="openJsp('/MoveRead/book/allBooks.action')">所有书籍</a>
+			</div>
+	        <br/>
+		</div>
+		
+		<div id="topMenu_3" class="module hide">
+			<h4>不良字管理</h4>
+			<div class="singleMenu">
+				<a href="#" onclick="openJsp('/MoveRead/badKeyword/list.action')">不良关键字</a>
+			</div>
+	        <br/>
+		</div>
+		
+		<div id="topMenu_4" class="module hide">
+			<h4>专区管理</h4>
+			<div class="singleMenu">
+				<a href="#" onclick="openJsp('/MoveRead/section/list.action')">所有专区</a>
+			</div>
+	        <br/>
+		</div>
+		
+		<div id="topMenu_5" class="module hide">
+			<h4>书评管理</h4>
+			<div class="singleMenu">
+				<a href="#" onclick="openJsp('/MoveRead/remark/listToAudit.action')">待审书评</a>
+				<a href="#" onclick="openJsp('/MoveRead/remark/listAuditing.action')">在审书评</a>
+				<a href="#" onclick="openJsp('/MoveRead/remark/listAudited.action')">已审书评</a>
+				<a href="#" onclick="openJsp('/MoveRead/remark/allRemarks.action')">所有书评</a>
+			</div>
+	        <br/>
+		</div>
+		
+		<div id="topMenu_6" class="module hide">
+			<h4>排行榜管理</h4>
+			<div class="singleMenu">
+			</div>
+	        <br/>
+		</div>
+		
+		<div id="topMenu_7" class="module hide">
+		<h4>系统管理</h4>
+		<div class="singleMenu">
+			<h5>人员管理</h5>
+			<a href="#" onclick="openJsp('/MoveRead/manager/list.action')">后台用户管理</a>
+			<a href="#" onclick="openJsp('/MoveRead/user/list.action')">前台用户管理</a>
+			<h5>安全管理</h5>
+			<a href="#" onclick="openJsp('/MoveRead/role/list.action')">角色权限管理</a>
+			<a href="#" onclick="openJsp('/MoveRead/log/list.action')">业务日志管理</a>
+        </div>
+	</div>
+	<br/>
+	</div>
+  </body>
+</html>

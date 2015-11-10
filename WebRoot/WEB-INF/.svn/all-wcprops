@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/cxb/!svn/ver/2/cxb/WebRoot/WEB-INF
+END
+spring.tld
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/cxb/!svn/ver/2/cxb/WebRoot/WEB-INF/spring.tld
+END
+spring-form.tld
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/cxb/!svn/ver/2/cxb/WebRoot/WEB-INF/spring-form.tld
+END
+applicationContext.xml
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/cxb/!svn/ver/2/cxb/WebRoot/WEB-INF/applicationContext.xml
+END
+web.xml
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/cxb/!svn/ver/2/cxb/WebRoot/WEB-INF/web.xml
+END

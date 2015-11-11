@@ -5,9 +5,9 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
-	<script type="text/javascript" src="../js/jquery-1.4.2.js"></script>
-	<script type="text/javascript" src="../js/jquery.validate.js"></script>
-	<script type="text/javascript" src="../js/common.js"></script>
+	<script type="text/javascript" src="/cxb/js/jquery-1.4.2.js"></script>
+	<script type="text/javascript" src="/cxb/js/jquery.validate.js"></script>
+	<script type="text/javascript" src="/cxb/js/common.js"></script>
     <script type="text/javascript">
       var vBundle = {
 		rules:{

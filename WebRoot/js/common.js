@@ -14,16 +14,21 @@ function submitFrm(formName){
 	
 	var vResult = validateFrm(formName).form();
 	//var vResult = true;
-	if(vResult)	{
-		var sureToSubmit = confirm("提交后项目信息不能更改。\n\r是否提交？");
-		if(sureToSubmit == false){
-			return;
+	
+		if(vResult)	{
+			var sureToSubmit = confirm("提交后项目信息不能更改。\n\r是否提交？");
+			if(sureToSubmit == false){
+				return;
+			}
+			window.setTimeout(function(){frm.submit();}, 100);
+			//alert('subumit');
+			return true;
 		}
-		window.setTimeout(function(){frm.submit();}, 100);
-		//alert('subumit');
-		return true;
-	}
-	else validateFrm(formName).focusInvalid();
+		else 
+		{
+			validateFrm(formName).focusInvalid();
+			alert("表单未填写完整!");
+		}
 }
 
 /** 表单验证 **/

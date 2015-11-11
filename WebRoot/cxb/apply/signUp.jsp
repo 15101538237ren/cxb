@@ -8,26 +8,26 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 
-		<link href="../css/bootstrap.css" rel="stylesheet" type="text/css">
-		<link href="../css/docs.css" rel="stylesheet">
-		<script type="text/javascript" src="../js/jquery.min.js"></script>
-		<script type="text/javascript" src="../js/common.js"></script>
+		<link href="/cxb/css/bootstrap.css" rel="stylesheet" type="text/css">
+		<link href="/cxb/css/docs.css" rel="stylesheet">
+		<script type="text/javascript" src="/cxb/js/jquery.min.js"></script>
+		<script type="text/javascript" src="/cxb/js/common.js"></script>
 		
-		<script type="text/javascript" src="../js/jquery.validate.js"></script>
-		<script type="text/javascript" src="../js/bootstrap-transition.js"></script>
-		<script type="text/javascript" src="../js/bootstrap-alert.js"
+		<script type="text/javascript" src="/cxb/js/jquery.validate.js"></script>
+		<script type="text/javascript" src="/cxb/js/bootstrap-transition.js"></script>
+		<script type="text/javascript" src="/cxb/js/bootstrap-alert.js"
 			charset="utf-8"></script>
-		<script type="text/javascript" src="../js/bootstrap-modal.js"></script>
-		<script type="text/javascript" src="../js/bootstrap-dropdown.js"></script>
-		<script type="text/javascript" src="../js/bootstrap-scrollspy.js"></script>
-		<script type="text/javascript" src="../js/bootstrap-tab.js"></script>
-		<script type="text/javascript" src="../js/bootstrap-tooltip.js"></script>
-		<script type="text/javascript" src="../js/bootstrap-popover.js"></script>
-		<script type="text/javascript" src="../js/bootstrap-button.js"></script>
-		<script type="text/javascript" src="../js/bootstrap-collapse.js"></script>
-		<script type="text/javascript" src="../js/bootstrap-carousel.js"></script>
-		<script type="text/javascript" src="../js/bootstrap-typeahead.js"></script>
-		<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="/cxb/js/bootstrap-modal.js"></script>
+		<script type="text/javascript" src="/cxb/js/bootstrap-dropdown.js"></script>
+		<script type="text/javascript" src="/cxb/js/bootstrap-scrollspy.js"></script>
+		<script type="text/javascript" src="/cxb/js/bootstrap-tab.js"></script>
+		<script type="text/javascript" src="/cxb/js/bootstrap-tooltip.js"></script>
+		<script type="text/javascript" src="/cxb/js/bootstrap-popover.js"></script>
+		<script type="text/javascript" src="/cxb/js/bootstrap-button.js"></script>
+		<script type="text/javascript" src="/cxb/js/bootstrap-collapse.js"></script>
+		<script type="text/javascript" src="/cxb/js/bootstrap-carousel.js"></script>
+		<script type="text/javascript" src="/cxb/js/bootstrap-typeahead.js"></script>
+		<script type="text/javascript" src="/cxb/js/bootstrap.min.js"></script>
 		<script>
 	$("#mymodal").modal({
 		show : false
@@ -119,6 +119,46 @@
 						});
 						
 });
+
+function showorNot()
+{
+	$selected=$("#teacherproject_select").children('option:selected');
+	if ($selected.val()!="0")
+	{
+		$("#project_name").hide();
+		
+		$("#name").val($selected.text());
+		$selected_text=$selected.text();
+		$index=$selected_text.indexOf("-");
+		if ($index>-1)
+		{
+			$str=$selected_text.substr($index+1,$selected_text.length);
+			$("#teacherName").each(function(){
+				$('option',$(this)).each(function(){
+					if($(this).val()==$str)
+					{
+						$(this).attr("selected","selected");
+						$("#teacherName").attr("disabled","disabled");
+					}
+				});
+			});
+			$("#teacherNametxt").val($str);
+		}
+		
+	}
+	else
+	{
+		$("#project_name").show();
+		$("#name").val("");
+		$("#teacherNametxt").val("无");
+		$("#teacherName").removeAttr("disabled");
+	}
+}
+function teacherChange()
+{
+	$selected=$("#teacherName").children('option:selected');
+	$("#teacherNametxt").val($selected.text());
+}
 </script>
 
 		<title>参赛报名</title>
@@ -161,10 +201,55 @@
 									<label class="control-label" for="name">
 										项目名称
 									</label>
+									
 									<div class="controls">
+											<select id="teacherproject_select" class="controls span6" onchange="showorNot()" >
+											<option value ="0" selected="selected">自主命题</option>
+											<option value ="1">基于声纹和位置信息的签到APP设计-宋友</option>
+											<option value ="2">基于声纹等身份特征识别的（移动、物联网）安全应用设计-宋友</option>
+											<option value ="3">盲人智能交互App的设计与实现-宋友</option>
+											<option value ="4">光线变化情况下的颜色识别改善方案-宋友</option>
+											<option value ="14">城市交通车流量统计APP的设计与实现-杜孝平</option>
+											<option value ="15">城市轨道交通站客流量统计软硬件设计与实现-杜孝平</option>
+											<option value ="16">基于图形图像特征的敏感文字信息提取-邵兵</option>
+											<option value ="17">移动端无线WiFi侦测及位置分析软件-邵兵</option>
+											<option value ="9">手持式虹膜采集仪-王海泉</option>
+											<option value ="10">食物热量自动检测-王海泉</option>
+											<option value ="11">出游日记/游记-王海泉</option>
+											<option value ="12">麻将胡牌后自动计算-王海泉</option>
+											<option value ="13">二手货估价-王海泉</option>
+											<option value ="5">基于领域模型的业务表单框架-林广艳</option>
+											<option value ="6">基于OpenXML的富文本生成和处理工具-谭火彬</option>
+											<option value ="7">UML模型检测和分析工具-谭火彬</option>
+											<option value ="8">软件库分析平台-谭火彬</option>
+											</select>
 											<div id="project_name">
-											<input type="text" id="name" name="name" class="span6" placeholder="必填">
+												<input type="text" id="name" name="name" class="span6" placeholder="必填">
 											</div>
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label" for="teacherName">
+										指导老师
+									</label>
+									<div class="controls">
+										<select id="teacherName" name="teacherName2" class="controls span6" onchange="teacherChange()" >
+										<option value ="无" selected="selected">无</option>
+										<option value ="宋友">宋友</option>
+										<option value ="杜孝平">杜孝平</option>
+										<option value ="杜孝平">杜孝平</option>
+										<option value ="邵兵">邵兵</option>
+										<option value ="林广艳">林广艳</option>
+										<option value ="谭火彬">谭火彬</option>
+										<option value ="王海泉">王海泉</option>
+										<option value ="吕云翔">吕云翔</option>
+										<option value ="原仓周">原仓周</option>
+										<option value ="贾经冬">贾经冬</option>
+										<option value ="申雪萍">申雪萍</option>
+										<option value ="贾经冬">贾经冬</option>
+										<option value ="王华峰">王华峰</option>
+										</select>
+										<input style="display:none" type="text" id="teacherNametxt" name="teacherName" class="span6" placeholder="必填">
 									</div>
 								</div>
 								<div class="control-group">

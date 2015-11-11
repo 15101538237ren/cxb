@@ -3,9 +3,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
 <html lang="zh-CN">
 	<head>
-	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
-    <script type="text/javascript" src="../js/jquery-1.4.2.js"></script>
-    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="/cxb/css/bootstrap.css">
+    <script type="text/javascript" src="/cxb/js/jquery-1.4.2.js"></script>
+    <script type="text/javascript" src="/cxb/js/bootstrap.min.js"></script>
 	</head>
 	<body>
 		<div class="navbar">

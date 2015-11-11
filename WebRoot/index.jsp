@@ -6,10 +6,8 @@
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-		<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
-		<link href="css/docs.css" rel="stylesheet">
-		<link href="../css/bootstrap.css" rel="stylesheet" type="text/css">
-		<link href="../css/docs.css" rel="stylesheet">
+		<link href="/cxb/css/bootstrap.css" rel="stylesheet" type="text/css">
+		<link href="/cxb/css/docs.css" rel="stylesheet">
 		<title>创新杯</title>
 		<script type="text/javascript">
 	function render() {
@@ -134,9 +132,9 @@
 			<!-- Navbar================================================== -->
 			<jsp:include page="/cxb/topmenu/menu.jsp"></jsp:include>
 
-			<h1 align="center">
+			<h3 align="center">
 				<legend class="center">
-					软件学院第5届“创新杯”
+					北航软件学院第5届“创新杯”
 				</legend>
 			</h1>
 			<div class="row">
@@ -195,22 +193,21 @@
     ================================================== -->
 		<!-- Placed at the end of the document so the pages load faster -->
 
-		<script type="text/javascript" src="js/processing.js"></script>
-		<script type="text/javascript" src="js/jquery.min.js"></script>
-		<script type="text/javascript" src="js/bootstrap-transition.js"></script>
-		<script type="text/javascript" src="js/bootstrap-alert.js"></script>
-		<script type="text/javascript" src="js/bootstrap-modal.js"></script>
-		<script type="text/javascript" src="js/bootstrap-dropdown.js"></script>
-		<script type="text/javascript" src="js/bootstrap-scrollspy.js"></script>
-		<script type="text/javascript" src="js/bootstrap-tab.js"></script>
-		<script type="text/javascript" src="js/bootstrap-tooltip.js"></script>
-		<script type="text/javascript" src="js/bootstrap-popover.js"></script>
-		<script type="text/javascript" src="js/bootstrap-button.js"></script>
-		<script type="text/javascript" src="js/bootstrap-collapse.js"></script>
-		<script type="text/javascript" src="js/bootstrap-carousel.js"></script>
-		<script type="text/javascript" src="js/bootstrap-typeahead.js"></script>
-		<script type="text/javascript" src="js/bootstrap-affix.js"></script>
-		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="/cxb/js/processing.js"></script>
+		<script type="text/javascript" src="/cxb/js/jquery.min.js"></script>
+		<script type="text/javascript" src="/cxb/js/bootstrap-transition.js"></script>
+		<script type="text/javascript" src="/cxb/js/bootstrap-alert.js"></script>
+		<script type="text/javascript" src="/cxb/js/bootstrap-modal.js"></script>
+		<script type="text/javascript" src="/cxb/js/bootstrap-dropdown.js"></script>
+		<script type="text/javascript" src="/cxb/js/bootstrap-scrollspy.js"></script>
+		<script type="text/javascript" src="/cxb/js/bootstrap-tab.js"></script>
+		<script type="text/javascript" src="/cxb/js/bootstrap-tooltip.js"></script>
+		<script type="text/javascript" src="/cxb/js/bootstrap-popover.js"></script>
+		<script type="text/javascript" src="/cxb/js/bootstrap-button.js"></script>
+		<script type="text/javascript" src="/cxb/js/bootstrap-collapse.js"></script>
+		<script type="text/javascript" src="/cxb/js/bootstrap-carousel.js"></script>
+		<script type="text/javascript" src="/cxb/js/bootstrap-typeahead.js"></script>
+		<script type="text/javascript" src="/cxb/js/bootstrap.min.js"></script>
 	</body>
 
 	<footer>

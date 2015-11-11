@@ -34,7 +34,9 @@
 				<value>hbm/Takeinproject.hbm.xml</value>
 				<value>hbm/Administrator.hbm.xml</value>
 				<value>hbm/Role.hbm.xml</value>
-				<value>hbm/Action.hbm.xml</value></list>
+				<value>hbm/Action.hbm.xml</value>
+				<value>hbm/Teacher.hbm.xml</value>
+				<value>hbm/RTeacherProject.hbm.xml</value></list>
 		</property>
 	</bean>	
 	
@@ -45,7 +47,6 @@
             <ref bean="sessionFactory" />
         </property>
     </bean>
-    
 	<bean id="StudentDAO" class="dao.StudentDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
@@ -57,7 +58,11 @@
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
-	
+	<bean id="TeacherDAO" class="dao.TeacherDAO">
+    	<property name="sessionFactory">
+    		<ref bean="sessionFactory" />
+    	</property>
+    </bean>
 	<bean id="TakeinprojectDAO" class="dao.TakeinprojectDAO">
     	<property name="sessionFactory">
     		<ref bean="sessionFactory" />
@@ -77,7 +82,11 @@
     		<ref bean="sessionFactory" />
     	</property>
     </bean>
-    
+    <bean id="RTeacherProjectDAO" class="dao.RTeacherProjectDAO">
+    	<property name="sessionFactory">
+    		<ref bean="sessionFactory" />
+    	</property>
+    </bean>
     <bean id="QueryUtil" class="util.QueryUtil">
 		<property name="sessionFactory">
     		<ref bean="sessionFactory" />
@@ -89,6 +98,9 @@
 		<property name="studentDAO">
 			<ref bean="StudentDAO"/>
 		</property>
+		<property name="teacherDAO">
+			<ref bean="TeacherDAO"/>
+		</property>
 		<property name="projectDAO">
 			<ref bean="ProjectDAO"/>
 		</property>
@@ -97,6 +109,9 @@
 		</property>
 		<property name="queryBean">
 			<ref bean="QueryUtil"/>
+		</property>
+		<property name="rTeacherProjectDAO">
+			<ref bean="RTeacherProjectDAO"/>
 		</property>
 	</bean>
 
@@ -124,6 +139,13 @@
     
     <!-- ProjectService.java注入 -->
     <bean id="projectService" class="service.ProjectService">
+    	<property name="allDAO">
+    		<ref bean="allDAO" />
+    	</property>
+    </bean>
+    
+    <!-- TeacherService.java注入 -->
+    <bean id="teacherService" class="service.TeacherService">
     	<property name="allDAO">
     		<ref bean="allDAO" />
     	</property>
@@ -164,6 +186,9 @@
 		<property name="projectService">
 			<ref bean="projectService"></ref>
 		</property>
+		<property name="teacherService">
+			<ref bean="teacherService"></ref>
+		</property>
 		<property name="takeinprojectService">
 			<ref bean="takeinprojectService"></ref>
 		</property>
@@ -191,4 +216,5 @@
     <bean id="meAction" class="controller.MeAction" parent="base" scope="prototype" />
     <bean id="indexAction" class="controller.IndexAction" parent="base" scope="prototype" />
        
+    
     </beans>

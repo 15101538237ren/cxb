@@ -7,8 +7,8 @@
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-		<link href="../css/bootstrap.css" rel="stylesheet" type="text/css" />
-		<link href="../css/docs.css" rel="stylesheet" />
+		<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+		<link href="css/docs.css" rel="stylesheet" />
 		<title>创新杯</title>
 	</head>
 	
@@ -30,23 +30,22 @@
     ================================================== -->
 		<!-- Placed at the end of the document so the pages load faster -->
 
-		<script type="text/javascript" src="js/jquery.min.js"></script>
-		<script type="text/javascript" src="js/bootstrap-transition.js"></script>
-		<script type="text/javascript" src="js/bootstrap-alert.js"></script>
-		<script type="text/javascript" src="js/bootstrap-modal.js"></script>
-		<script type="text/javascript" src="js/bootstrap-dropdown.js"></script>
-		<script type="text/javascript" src="js/bootstrap-scrollspy.js"></script>
-		<script type="text/javascript" src="js/bootstrap-tab.js"></script>
-		<script type="text/javascript" src="js/bootstrap-tooltip.js"></script>
-		<script type="text/javascript" src="js/bootstrap-popover.js"></script>
-		<script type="text/javascript" src="js/bootstrap-button.js"></script>
-		<script type="text/javascript" src="js/bootstrap-collapse.js"></script>
-		<script type="text/javascript" src="js/bootstrap-carousel.js"></script>
-		<script type="text/javascript" src="js/bootstrap-typeahead.js"></script>
-		<script type="text/javascript" src="js/bootstrap-affix.js"></script>
-		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="/cxb/js/jquery.min.js"></script>
+		<script type="text/javascript" src="/cxb/js/bootstrap-transition.js"></script>
+		<script type="text/javascript" src="/cxb/js/bootstrap-alert.js"></script>
+		<script type="text/javascript" src="/cxb/js/bootstrap-modal.js"></script>
+		<script type="text/javascript" src="/cxb/js/bootstrap-dropdown.js"></script>
+		<script type="text/javascript" src="/cxb/js/bootstrap-scrollspy.js"></script>
+		<script type="text/javascript" src="/cxb/js/bootstrap-tab.js"></script>
+		<script type="text/javascript" src="/cxb/js/bootstrap-tooltip.js"></script>
+		<script type="text/javascript" src="/cxb/js/bootstrap-popover.js"></script>
+		<script type="text/javascript" src="/cxb/js/bootstrap-button.js"></script>
+		<script type="text/javascript" src="/cxb/js/bootstrap-collapse.js"></script>
+		<script type="text/javascript" src="/cxb/js/bootstrap-carousel.js"></script>
+		<script type="text/javascript" src="/cxb/js/bootstrap-typeahead.js"></script>
+		<script type="text/javascript" src="/cxb/js/bootstrap.min.js"></script>
 	</body>
 
-	<footer> <center>© 北航软件学院,2011-2012</center> </footer>
+	<footer> <center>© 北航软件学院,2011-2015</center> </footer>
 
 </html>

@@ -9,13 +9,19 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.apache.struts2.ServletActionContext;
 
+import service.TeacherService;
+
 import com.mysql.jdbc.StringUtils;
 import com.opensymphony.xwork2.ActionContext;
 
+import dao.RTeacherProjectDAO;
+import dao.TeacherDAO;
 import entity.Project;
 import entity.Student;
 import entity.Takeinproject;
-
+import entity.RTeacherProject;
+import entity.RTeacherProjectId;
+import entity.Teacher;
 /**
  * @author betterSoft
  * 
@@ -238,6 +244,7 @@ public class ProjectAction extends BaseAction {
 	public void setProject(Project project) {
 		this.project = project;
 	}
+	
 
 	/**
 	 * 页面中所显示的显示某一个project的信息，是根据从session中取出的project进行设置的。
@@ -319,7 +326,6 @@ public class ProjectAction extends BaseAction {
 
 			project.setKind(projectType);// 项目类型
 			project.setMc(name); // 项目名称
-			// project.getTeachers().add(teacherName); //指导教师
 			project.setInnovation(newIdea);// 技术创新点
 			project.setKeyTech(difficult);// 技术难点
 		} catch (Exception e) {
@@ -327,6 +333,20 @@ public class ProjectAction extends BaseAction {
 		}
 
 		if (this.getAllService().getProjectService().save(project)) {
+			TeacherDAO teacherDAO=this.getAllService().getTeacherService().getAllDAO().getTeacherDAO();
+			if (!teacherName.equalsIgnoreCase("无"))
+			{
+				List teacherList=teacherDAO.findByTXm(teacherName);
+				if (!teacherList.isEmpty())
+				{
+					Teacher teacher=(Teacher)teacherList.get(0);
+					String tid=teacher.getTId();
+					RTeacherProjectId rTeacherProjectId=new RTeacherProjectId(project,tid);
+					RTeacherProject rTeacherProject=new RTeacherProject(rTeacherProjectId);
+					RTeacherProjectDAO rTeacherProjectDAO=this.getAllService().getTeacherService().getAllDAO().getrTeacherProjectDAO();
+					rTeacherProjectDAO.save(rTeacherProject);
+				}
+			}
 			message = "保存项目成功。";
 			// return SUCCESS;
 		} else {
@@ -335,7 +355,7 @@ public class ProjectAction extends BaseAction {
 		}
 
 		session.put("project", project);// 将申请的项目保存在session中
-
+		session.put("teacherName",teacherName);
 		// 保存第一作者的修改信息
 		firstStudent.setSSjh(telephone);
 		firstStudent.setSYx(email);

@@ -8,8 +8,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 
-		<link href="../css/bootstrap.css" rel="stylesheet" type="text/css">
-		<link href="../css/docs.css" rel="stylesheet">
+		<link href="/cxb/css/bootstrap.css" rel="stylesheet" type="text/css">
+		<link href="/cxb/css/docs.css" rel="stylesheet">
 
 		<script type="text/javascript">
 	var vBundle = {
@@ -216,6 +216,15 @@
 									</div>
 								</div>
 								<div class="control-group">
+									<label class="control-label" for="teacherName">
+										指导老师
+									</label>
+									<div class="controls">
+											<s:select name="teacherName" value="#session.teacherName" list="{'宋友','杜孝平','邵兵','林广艳','谭火彬','王海泉','吕云翔','原仓周','贾经冬','申雪萍','王华峰'}" headerKey="" headerValue="无" placeholder="必填"  >
+											</s:select>
+									</div>
+								</div>
+								<div class="control-group">
 									<label class="control-label" for="newIdea">
 										项目创新点
 									</label>
@@ -324,23 +333,22 @@
     ================================================== -->
 		<!-- Placed at the end of the document so the pages load faster -->
 
-		<script type="text/javascript" src="../js/common.js"></script>
-		<script type="text/javascript" src="../js/jquery.min.js"></script>
-		<script type="text/javascript" src="../js/jquery.validate.js"></script>
-		<script type="text/javascript" src="../js/bootstrap-transition.js"></script>
-		<script type="text/javascript" src="../js/bootstrap-alert.js"
+		<script type="text/javascript" src="/cxb/js/common.js"></script>
+		<script type="text/javascript" src="/cxb/js/jquery.min.js"></script>
+		<script type="text/javascript" src="/cxb/js/jquery.validate.js"></script>
+		<script type="text/javascript" src="/cxb/js/bootstrap-transition.js"></script>
+		<script type="text/javascript" src="/cxb/js/bootstrap-alert.js"
 			charset="utf-8"></script>
-		<script type="text/javascript" src="../js/bootstrap-modal.js"></script>
-		<script type="text/javascript" src="../js/bootstrap-dropdown.js"></script>
-		<script type="text/javascript" src="../js/bootstrap-scrollspy.js"></script>
-		<script type="text/javascript" src="../js/bootstrap-tab.js"></script>
-		<script type="text/javascript" src="../js/bootstrap-tooltip.js"></script>
-		<script type="text/javascript" src="../js/bootstrap-popover.js"></script>
-		<script type="text/javascript" src="../js/bootstrap-button.js"></script>
-		<script type="text/javascript" src="../js/bootstrap-collapse.js"></script>
-		<script type="text/javascript" src="../js/bootstrap-carousel.js"></script>
-		<script type="text/javascript" src="../js/bootstrap-typeahead.js"></script>
-		<script type="text/javascript" src="../js/bootstrap-affix.js"></script>
-		<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="/cxb/js/bootstrap-modal.js"></script>
+		<script type="text/javascript" src="/cxb/js/bootstrap-dropdown.js"></script>
+		<script type="text/javascript" src="/cxb/js/bootstrap-scrollspy.js"></script>
+		<script type="text/javascript" src="/cxb/js/bootstrap-tab.js"></script>
+		<script type="text/javascript" src="/cxb/js/bootstrap-tooltip.js"></script>
+		<script type="text/javascript" src="/cxb/js/bootstrap-popover.js"></script>
+		<script type="text/javascript" src="/cxb/js/bootstrap-button.js"></script>
+		<script type="text/javascript" src="/cxb/js/bootstrap-collapse.js"></script>
+		<script type="text/javascript" src="/cxb/js/bootstrap-carousel.js"></script>
+		<script type="text/javascript" src="/cxb/js/bootstrap-typeahead.js"></script>
+		<script type="text/javascript" src="/cxb/js/bootstrap.min.js"></script>
 	</body>
 </html>

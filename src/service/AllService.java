@@ -10,8 +10,14 @@ public class AllService {
 	private TakeinprojectService takeinprojectService;
 	private MeService meService;
 	private AdministrationService adminService;
+	private TeacherService teacherService;
 	
-	
+	public TeacherService getTeacherService() {
+		return teacherService;
+	}
+	public void setTeacherService(TeacherService teacherService) {
+		this.teacherService = teacherService;
+	}
 	public MeService getMeService() {
 		return meService;
 	}

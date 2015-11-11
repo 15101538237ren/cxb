@@ -1,6 +1,7 @@
 package dao;
 
 import java.util.List;
+
 import org.hibernate.LockMode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,14 +21,12 @@ import entity.Takeinproject;
  * @see entity.Takeinproject
  * @author MyEclipse Persistence Tools
  */
-
 public class TakeinprojectDAO extends HibernateDaoSupport {
 	private static final Logger log = LoggerFactory
 			.getLogger(TakeinprojectDAO.class);
 	// property constants
 	public static final String _SORDER = "SOrder";
-	public static final String _STUDENT = "student";
-	
+
 	protected void initDao() {
 		// do nothing
 	}
@@ -96,10 +95,6 @@ public class TakeinprojectDAO extends HibernateDaoSupport {
 		return findByProperty(_SORDER, SOrder);
 	}
 
-	public List findByStudent(Object student){
-		return findByProperty(_STUDENT,student);
-	}
-	
 	public List findAll() {
 		log.debug("finding all Takeinproject instances");
 		try {

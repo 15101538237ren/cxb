@@ -10,14 +10,12 @@
             <column name="ID" length="40" />
             <generator class="uuid.hex"></generator>
         </id>
-        <many-to-one name="student" class="entity.Student" fetch="select" lazy="false">
+        <many-to-one name="student" class="entity.Student"  lazy="false" fetch="select">
             <column name="s_ID" length="40" not-null="true" />
         </many-to-one>
-        
-        <many-to-one name="project" class="entity.Project" fetch="select" lazy="false">
+        <many-to-one name="project" class="entity.Project" lazy="false" fetch="select">
             <column name="p_ID" length="40" not-null="true" />
         </many-to-one>
-        
         <property name="SOrder" type="java.lang.Integer">
             <column name="s_ORDER" not-null="true">
                 <comment>作者序号</comment>
